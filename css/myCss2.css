@@ -61,11 +61,10 @@ nav {
 #mennyRangeSzam {
     color: red;
     height: 30px;
-    width: 28px;
+    width: 60px;
     border: none;
     outline: none;
     resize: none;
-    pointer-events: none;
     overflow: hidden;
     position: absolute;
 }

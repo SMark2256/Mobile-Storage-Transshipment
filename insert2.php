@@ -138,6 +138,6 @@ Echo '<div class="col-md-4"></div>';
 Echo '</div>';
 
 
-header('Refresh: 2; URL=https://intranet2/testing/raktarozo/index2.php');
+header('Refresh: 2; URL=https://intranet2/testing/raktarozo/index3.php');
 
 ?>

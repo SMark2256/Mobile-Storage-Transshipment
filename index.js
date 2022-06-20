@@ -36,7 +36,6 @@ $(document).ready(function() {
     }
 
 
-
     $('#cikkHovaXYZ').prop('disabled', true);
     $('#mennyRange').prop('disabled', true);
     $('#mennyRange').val(0);
@@ -48,12 +47,6 @@ $(document).ready(function() {
 
     console.log("index.js ended");
 });
-
-
-
-
-
-
 
 
 
@@ -73,9 +66,19 @@ const resultKeresMenny = () =>
     keresMenny[$('Mennyiseg').val()];
 
 
-const mennyRangeChange = () =>
-    $('#mennyRangeSzam').html($('#mennyRange').val());
+const mennyRangeSzamChange = () =>
+    $('#mennyRangeSzam').val($('#mennyRange').val());
 
+const mennyRangeChange = () => {
+
+    if ($('#mennyRangeSzam').val() > $('#mennyRange').prop('max')) {
+        $('#mennyRangeSzam').val($('#mennyRange').prop('max'));
+        $('#mennyRange').val($('#mennyRangeSzam').val());
+    } else {
+        $('#mennyRange').val($('#mennyRangeSzam').val());
+    }
+
+}
 
 const selectChange = () =>
     $('#myHeader').html($('#menu').val());
@@ -164,7 +167,7 @@ const forrasRaktarMenny = () => {
     $('#mennyRange').prop('disabled', false);
     $('#mennyRange').prop('max', resultHovaFunc('#forrasRaktar').mennyiseg);
     $('#mennyRange').val(resultHovaFunc('#forrasRaktar').mennyiseg);
-    mennyRangeChange();
+    mennyRangeSzamChange();
     console.log("forras raktár");
 
 

@@ -147,10 +147,9 @@ require_once("select.php");
 
                         <div class="col-xs-4 col-sm-2 col-md-4 col-lg-4 col-xl-4">
                               <label for="mennyRange" class="labelmargins form-label unselectable">Mennyiség:
-                                    <textarea readonly id="mennyRangeSzam" class="bg-light">
-                                    </textarea>
+                                    <input type="text" id="mennyRangeSzam" class="bg-light" onChange="mennyRangeChange()"/>
                               </label>
-                              <input type="range" class=" form-range form-control-lg" min="0" max="100" id="mennyRange" name="mennyRange" oninput="mennyRangeChange()" />
+                              <input type="range" class=" form-range form-control-lg" min="0" max="10000" id="mennyRange" name="mennyRange" oninput="mennyRangeSzamChange()" />
                         </div>
                   </div>
 

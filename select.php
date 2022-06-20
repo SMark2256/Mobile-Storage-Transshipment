@@ -47,8 +47,9 @@ $cikkSQL = 'SELECT asciistr(SS.ItemNo) as "cikk"
     AND ST.StoreNo = LC.StoreNo
     AND AC.SetType <> 1
     AND ST.AddressNo = \'00002-02\'
+    AND (SS.ItemNo LIKE \'CNA%\' OR SS.ItemNo LIKE \'CMA%\')
     GROUP BY  SS.QuantityUnit, SS.ItemNo,LC.StoreNo, LC.X , LC.Y, LC.Z
-    ORDER BY SS.ItemNo';
+    ORDER BY SS.ItemNo DESC';
 
 $cikkSTID = connect($cikkSQL);
 
@@ -96,6 +97,7 @@ WHERE
     AND X <> \'0\'
     AND Y <> \'0\'
     AND Z <> \'0\'
+    AND UPPER(ST.STORENO) NOT LIKE \'D%\'
 GROUP BY 
 SS.ItemNo
 ,ST.STORENO 
