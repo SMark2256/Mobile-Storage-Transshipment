@@ -66,19 +66,28 @@ const resultKeresMenny = () =>
     keresMenny[$('Mennyiseg').val()];
 
 
-const mennyRangeSzamChange = () =>
+const mennyRangeSzamChange = () => {
     $('#mennyRangeSzam').val($('#mennyRange').val());
+    $('#mennyRangeSzam').prop('max', $('#mennyRange').prop('max'));
+}
+
 
 const mennyRangeChange = () => {
 
-    if ($('#mennyRangeSzam').val() > $('#mennyRange').prop('max')) {
-        $('#mennyRangeSzam').val($('#mennyRange').prop('max'));
-        $('#mennyRange').val($('#mennyRangeSzam').val());
-    } else {
-        $('#mennyRange').val($('#mennyRangeSzam').val());
-    }
+    // console.log($('#mennyRangeSzam').val());
+    // console.log($('#mennyRange').prop('max'));
 
+    $('#mennyRangeSzam').prop('max', $('#mennyRange').prop('max'));
+    $('#mennyRange').val($('#mennyRangeSzam').val());
+
+    if ($('#mennyRangeSzam').val() > $('#mennyRangeSzam').prop('max')) {
+        $('#mennyRangeSzam').val($('#mennyRangeSzam').prop('max'));
+        $('#mennyRangeSzam').val($('#mennyRange').val());
+
+        // console.log("max felett");
+    }
 }
+
 
 const selectChange = () =>
     $('#myHeader').html($('#menu').val());

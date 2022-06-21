@@ -53,7 +53,7 @@ $cikkSQL = 'SELECT asciistr(SS.ItemNo) as "cikk"
 
 $cikkSTID = connect($cikkSQL);
 
-print_r($cikkSTID);
+//print_r($cikkSTID);
 
 $rows = oc_stmt_to_array($cikkSTID, ['cikk' => '1', 'tipus' => '1', 'x' => '1', 'y' => '1', 'z' => '1']);
 
